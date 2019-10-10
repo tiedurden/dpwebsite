@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>injured data v4</title>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script src="http://code.highcharts.com/modules/data.js"></script>
+    <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="dp.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="dpw.css" rel="stylesheet">
+    <!-- <link href="http://code.highcharts.com/css/themes/dark-unica.css" rel="stylesheet">-->
+
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+    <div id="topnavbar">
+
+        <button style="visibility: hidden" class="button" onclick="countUp()"></button>
+        <input id="counter" value="106" size="3">
+        <button style="visibility: hidden" class="button" onclick="countDown()"></button>
+
+
+    </div>
+    <div id='header'>
+        &nbsp;
+    </div>
+    <div id='main'>
+        <h1>dsp </h1>
+        <h2>Table of content</h2>
+
+        <div class='listleft'>
+            Homepage </div>
+        <div class='listright'>
+            <a href="index.html">100</a>
+        </div>
+        <div class='listleft'>
+            Highchart demo test </div>
+        <div class='listright'>
+            <a href="102.html">102</a>
+        </div>
+        <div class='listleft'>
+            Version 1 injured player chart
+        </div>
+        <div class='listright'>
+            <a href="104.html">104</a>
+        </div>
+        <div class='listleft'>
+            Injured player chart Bundesliga 18/19
+        </div>
+        <div class='listright'>
+            <a href="106.html">106</a>
+        </div>
+
+        <hr>
+
+
+    </div>
+
+    <div id="container"></div>
+
+    <pre id="csv" style="display:none">
+,FC Bayern München,Borussia Dortmund,RasenBallsport Leipzig,Bayer 04 Leverkusen,Borussia Mönchengladbach,VfL Wolfsburg,Eintracht Frankfurt,SV Werder Bremen,TSG 1899 Hoffenheim,Fortuna Düsseldorf,Hertha BSC,1.FSV Mainz 05,SC Freiburg,FC Schalke 04,FC Augsburg,VfB Stuttgart,Hannover 96,1.FC Nürnberg
+1,1,2,1,5,8,4,3,7,6,5,7,5,3,3,3,1,3,2
+2,1,4,1,3,6,5,2,6,5,4,7,6,4,2,3,1,4,2
+3,2,3,1,4,4,5,4,6,8,4,8,7,4,3,4,4,2,3
+4,3,2,3,4,4,4,4,7,6,6,5,6,5,3,4,4,2,2
+5,3,2,3,4,4,4,5,5,6,6,5,5,5,4,3,4,2,2
+6,4,1,2,4,3,6,5,5,8,6,6,6,3,3,3,2,3,2
+7,4,8,1,4,3,7,3,6,6,6,3,8,4,4,1,4,3,2
+8,2,6,3,3,1,5,3,7,4,6,7,5,4,4,1,6,3,2
+9,2,4,2,2,2,5,3,7,4,7,4,5,6,2,2,5,3,5
+10,3,4,2,2,2,5,6,5,2,6,3,6,6,2,2,5,7,5
+11,5,3,3,1,1,3,4,5,3,5,5,5,5,2,2,5,6,5
+12,7,2,4,1,2,4,5,6,3,5,7,6,3,4,3,7,7,4
+13,4,4,2,3,4,3,4,6,2,5,7,6,5,3,2,5,5,4
+14,3,5,3,2,5,2,4,8,2,6,7,6,3,3,2,6,5,5
+15,3,3,2,3,6,3,5,8,2,6,10,7,3,4,1,6,4,5
+16,4,2,2,3,8,3,5,7,2,5,7,6,3,4,2,6,6,5
+17,6,4,2,3,5,4,5,7,2,4,8,6,3,5,5,5,6,4
+18,3,5,2,2,3,3,4,4,3,5,5,3,4,3,1,5,8,3
+19,3,3,2,2,4,3,2,4,3,5,2,3,4,3,2,3,6,3
+20,5,3,3,3,3,4,3,2,2,7,4,4,3,6,3,2,6,3
+21,4,3,2,3,4,3,4,4,3,4,5,4,4,5,3,2,7,2
+22,2,4,2,3,5,2,3,4,4,6,5,4,5,4,2,2,5,2
+23,3,5,2,4,4,2,3,5,7,7,5,3,5,5,3,2,6,2
+24,6,4,3,4,4,2,4,3,8,6,4,3,4,2,3,4,7,3
+25,3,5,3,3,6,2,3,4,4,5,3,3,4,2,5,0,8,3
+26,4,4,3,2,6,2,5,5,3,7,2,4,6,5,5,0,7,4
+27,4,4,4,1,3,2,5,5,3,5,3,4,6,6,5,2,8,4
+28,3,3,3,3,4,4,5,3,3,5,5,4,7,5,6,4,8,5
+29,3,6,4,2,3,7,4,4,3,7,6,6,7,3,5,4,8,5
+30,5,3,3,4,5,6,2,3,4,10,4,6,8,3,5,2,8,4
+31,4,3,3,4,5,7,3,3,6,7,3,4,8,5,6,1,5,3
+32,3,2,2,4,3,6,1,3,7,6,5,3,7,7,4,0,4,3
+33,3,6,2,3,5,6,1,4,8,6,5,3,6,6,4,3,4,4
+34,3,4,0,3,4,5,1,4,8,4,5,3,5,5,6,3,4,3
+</pre>
+
+
+
+    <script type="module">
+
+        $(function() {
+            $('#container').highcharts({
+                chart: {
+                    type: 'line',
+                    width: 850,
+                    style: {  
+                        fontFamily: 'monospace',
+                        color: "#00ffff"},
+                    backgroundColor: 'black'                  
+                },
+                legend: {
+                    verticalAlign: 'top',
+                    itemStyle: {
+                        color: '#00ffff',
+                        fontFamily: 'monospace'
+                    }     
+                },
+                title: {
+                    style: {
+                    color: "white"
+                        },
+                    text: 'Injured players per team and matchday season 18/19'
+                }, 
+                
+                yAxis: {  
+                    type: 'category',
+                    title: {
+                        text: 'Injured players'
+                    },
+                        min: 0,
+                        max: 10
+                },
+                
+                xAxis: {
+                    title: {
+                        text: 'Matchday'
+                    },
+                    min: 1,
+                    max: 34,
+                    accessibility: {
+                        description: 'Matchday 1 to 34'
+                    },
+                    categories: [],
+                    labels: {
+                        steps: 1,
+                        overflow: 'justify'
+                    },
+                },
+              
+                data: {
+                csv: document.getElementById('csv').innerHTML
+            },
+                series: [
+                    {
+                        color: "red"}    
+                ]
+            }, function(chart) {
+
+                var serie;
+
+                $.each(chart.series, function(i, serie) {
+                    serie.hide()
+                });
+
+
+
+            });
+        });
+
+    </script>
+</body>
+
+</html>
