@@ -111,7 +111,7 @@
 </pre>
 
     <script>
-        Highcharts.chart('container', {
+        var chart = Highcharts.chart('container', {
             chart: {
                 type: 'line'
             },
@@ -141,6 +141,10 @@
                 color: '#c4392d',
             }]
         });
+        
+        for (var i = 0; i < 33; i++) {
+            chart.series[i].hide();
+        }
 
     </script>
 
