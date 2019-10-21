@@ -37,33 +37,30 @@
         &nbsp;
     </div>
     <div id='main'>
-        <h1>Lorem ipsum</h1>
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h1>dsp</h1>
+        <h2>Project Description</h2>
 
-        <div class='listleft'>
-            Homepage </div>
-        <div class='listright'>
-            <a href="index.html">100</a>
-        </div>
-        <div class='listleft'>
-            Highchart demo test </div>
-        <div class='listright'>
-            <a href="102.html">102</a>
-        </div>
-        <div class='listleft'>
-            Version 1 injured player chart
-        </div>
-        <div class='listright'>
-            <a href="104.html">104</a>
-        </div>
-        <div class='listleft'>
-            Injured player chart Bundesliga 18/19
-        </div>
-        <div class='listright'>
-            <a href="106.html">106</a>
-        </div>
+        <p> I wanted to create an interactive Chart to see how many players where injured per team and matchday<br>
+            My
+            I pulled all the data from Transfermarkt.de using the Node library puppeteer.</p>
+        <p>First I got all the teams from<br /> </p> <a href="https://www.transfermarkt.de/1-bundesliga/startseite/wettbewerb/L1/plus/?saison_id=2018">https://www.transfermarkt.de/1-bundesliga/startseite/wettbewerb/L1/plus/?saison_id=2018</a><br />
+        <p> with the following short script: get_club_list.js(link to GitHub)</p>
+        <p><br />Than I tried to get all players of each team estimating that none had more than 46on there roster with this script(link to GitHub)</p>
+        <p>(This script was also a bit more difficult because it had to write data to an output file and use data from input file using the node module <a href>>fs</a> </p>
+        <p>I have done that a view times before. But its always another source of errors</p>
+        <p>The output produced a file with about 600 entries </p>
 
-        <hr>
+        <p><br />When i got all the players profiles<br />I first used this script to go to each players injury history and draw every entry from the 18/19 season with start and end date and name of injury along side with the team. <br />Two problems occured with that in the output file. <br />A lot of players changed the club during the season and my lack of excel skills.</p>
+        <p>The challenge to detect if match days were within a time of injury was not solveable for me at this time.<br />(If you have an idea how to do that let me know)</p>
+        <p>So I wrote a a 4th script(linkt to Github).</p>
+        <p>This one went to the performance page of each player<br />and got every missed game caused by injury of each player counting them up in an excel file later.</p>
+        <p>A crucial question was if i had to leave players aside manually because they wouldn't have played even if they weren't injured. But transfermarkt.de just put the Bundesliga on the performance page if they have been in the squad at least once.<br />I just took data of players who have been in the squad more than once.</p>
+        <p>So afterwards I had an output file which was much easer to analyze. <br />So I could make a table with the number of injured players for each club on each match day.</p>
+        <p>So I could start to make a chart.<br />I just had gotten to know highcharts. <br />Most difficult for me was to inject the data from a csv. I didn't want to make manually entries because I was planning on doing he analysis for the other 3 big leagues in Europe as well.</p>
+        <p>But in the end i did make a <a href="107.html">chart</a> with manual data injection so that i could use some images to make it look better<br />Also I pulled the data of the Premier League and made a simple chart for them as well</p>.
+
+        <p>Contact me if you have questions.</p>
+        <p>&nbsp;</p>
 
     </div>
 
@@ -72,45 +69,22 @@
 
     <div id="container"></div>
 
-    <pre id="csv" style="display:none">
-Categories,Apples,Pears,Oranges,Bananas
-John,8,4,6,5
-Jane,3,4,2,3
-Joe,86,76,79,77
-Janet,3,16,13,15
-</pre>
 
-    <script>
-        Highcharts.chart('container', {
 
-            title: {
-                text: 'Global temperature change'
-            },
-
-            subtitle: {
-                text: 'Data input from CSV'
-            },
-
-            data: {
-                csv: document.getElementById('csv').innerHTML
-            },
-
-            plotOptions: {
-                series: {
-                    marker: {
-                        enabled: true
-                    }
-                }
-            },
-
-            series: [{
-                type: 'column',
-                color: '#c4392d',
-            }]
-        });
-
-    </script>
-
+    <div id='footer'>
+        <div id='red'>
+            <a href="101.html">Impressum</a>
+        </div>
+        <div id='green'>
+            other stuff
+        </div>
+        <div id='yellow'>
+            stuff
+        </div>
+        <div id='blue'>
+            stuff
+        </div>
+    </div>
 
 
 

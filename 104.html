@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>injured data v2</title>
+    <title>Injured Players V1</title>
 
 
 
@@ -13,6 +13,7 @@
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/data.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
+
 
     <script type="text/javascript" src="dp.js"></script>
 
@@ -39,18 +40,13 @@
         &nbsp;
     </div>
     <div id='main'>
-        <h1>Lorem ipsum</h1>
-        <h2>Lorem ipsum dolor sit amet</h2>
+        <h1>dsp</h1>
+        <h2>Table of Content</h2>
 
         <div class='listleft'>
             Homepage </div>
         <div class='listright'>
             <a href="index.html">100</a>
-        </div>
-        <div class='listleft'>
-            Highchart demo test </div>
-        <div class='listright'>
-            <a href="102.html">102</a>
         </div>
         <div class='listleft'>
             Version 1 injured player chart
@@ -62,7 +58,7 @@
             Injured player chart Bundesliga 18/19
         </div>
         <div class='listright'>
-            <a href="106.html">106</a>
+            <a href="107.html">107</a>
         </div>
 
         <hr>
@@ -70,14 +66,19 @@
     </div>
 
 
-    <div id="wrapper" style="width: 850px">
-        <div id="customLegend"></div>
+    <div id="wrapper">
+        <div id="customLegend" style="width:250px;">
+            <span class="custom-dropdown">
+                <select> </select>
+            </span>
+        </div>
 
         <div id="container" style="height: 400px"></div>
 
     </div>
 
     <script type="module">
+
         $(function() {
             $('#container').highcharts({
                 legend: {
@@ -148,7 +149,7 @@ visible: false
 ]
             }, function(chart) {
 
-                var $customLegend = $('#customLegend').append('<select id="customSelect" ></select>').find('select'),
+                var $customLegend = $('#customLegend').find('select'),
                     $option,
                     serie;
 
@@ -174,7 +175,24 @@ visible: false
             });
         });
 
+
+       
+
     </script>
+    <div id='footer'>
+        <div id='red'>
+            <a href="101.html">Impressum</a>
+        </div>
+        <div id='green'>
+            other stuff
+        </div>
+        <div id='yellow'>
+            stuff
+        </div>
+        <div id='blue'>
+            stuff
+        </div>
+    </div>
 
 </body>
 

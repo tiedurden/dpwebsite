@@ -4,134 +4,196 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>injured data v3</title>
+    <title>Injuries per matchday team Premier League 18/19</title>
 
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="http://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/data.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
+    <script type="text/javascript" src="dp.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+    <link href="dpw.css" rel="stylesheet">
+
+    <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
 
 </head>
 
 <body>
 
-    <div id="customLegend"></div>
+    <div id="topnavbar">
 
-    <div style="float left" id="container" style="height: 400px"></div>
+        <button style="visibility: hidden" class="button" onclick="countUp()"></button>
+        <input id="counter" value="108" size="3">
+        <button onclick="countDown()"></button>
+
+
+    </div>
+    <div id='header'>
+        &nbsp;
+    </div>
+    <div id='main'>
+        <h1>dsp </h1>
+        <h2>Table of content</h2>
+
+        <div class='listleft'>
+            Homepage </div>
+        <div class='listright'>
+            <a href="index.html">100</a>
+        </div>
+
+        <div class='listleft'>
+            Version 1 injured player chart
+        </div>
+        <div class='listright'>
+            <a href="104.html">104</a>
+        </div>
+        <div class='listleft'>
+            Injured player chart Bundesliga 18/19
+        </div>
+        <div class='listright'>
+            <a href="106.html">106</a>
+        </div>
+
+        <hr>
+
+
+    </div>
+
+    <div id="container"></div>
 
     <pre id="csv" style="display:none">
-,FC Bayern München,Borussia Dortmund,RasenBallsport Leipzig,Bayer 04 Leverkusen,Borussia Mönchengladbach,VfL Wolfsburg,Eintracht Frankfurt,SV Werder Bremen,TSG 1899 Hoffenheim,Fortuna Düsseldorf,Hertha BSC,1.FSV Mainz 05,SC Freiburg,FC Schalke 04,FC Augsburg,VfB Stuttgart,Hannover 96,1.FC Nürnberg
-1,1,2,1,5,8,4,3,7,6,5,7,5,3,3,3,1,3,2
-2,1,4,1,3,6,5,2,6,5,4,7,6,4,2,3,1,4,2
-3,2,3,1,4,4,5,4,6,8,4,8,7,4,3,4,4,2,3
-4,3,2,3,4,4,4,4,7,6,6,5,6,5,3,4,4,2,2
-5,3,2,3,4,4,4,5,5,6,6,5,5,5,4,3,4,2,2
-6,4,1,2,4,3,6,5,5,8,6,6,6,3,3,3,2,3,2
-7,4,8,1,4,3,7,3,6,6,6,3,8,4,4,1,4,3,2
-8,2,6,3,3,1,5,3,7,4,6,7,5,4,4,1,6,3,2
-9,2,4,2,2,2,5,3,7,4,7,4,5,6,2,2,5,3,5
-10,3,4,2,2,2,5,6,5,2,6,3,6,6,2,2,5,7,5
-11,5,3,3,1,1,3,4,5,3,5,5,5,5,2,2,5,6,5
-12,7,2,4,1,2,4,5,6,3,5,7,6,3,4,3,7,7,4
-13,4,4,2,3,4,3,4,6,2,5,7,6,5,3,2,5,5,4
-14,3,5,3,2,5,2,4,8,2,6,7,6,3,3,2,6,5,5
-15,3,3,2,3,6,3,5,8,2,6,10,7,3,4,1,6,4,5
-16,4,2,2,3,8,3,5,7,2,5,7,6,3,4,2,6,6,5
-17,6,4,2,3,5,4,5,7,2,4,8,6,3,5,5,5,6,4
-18,3,5,2,2,3,3,4,4,3,5,5,3,4,3,1,5,8,3
-19,3,3,2,2,4,3,2,4,3,5,2,3,4,3,2,3,6,3
-20,5,3,3,3,3,4,3,2,2,7,4,4,3,6,3,2,6,3
-21,4,3,2,3,4,3,4,4,3,4,5,4,4,5,3,2,7,2
-22,2,4,2,3,5,2,3,4,4,6,5,4,5,4,2,2,5,2
-23,3,5,2,4,4,2,3,5,7,7,5,3,5,5,3,2,6,2
-24,6,4,3,4,4,2,4,3,8,6,4,3,4,2,3,4,7,3
-25,3,5,3,3,6,2,3,4,4,5,3,3,4,2,5,0,8,3
-26,4,4,3,2,6,2,5,5,3,7,2,4,6,5,5,0,7,4
-27,4,4,4,1,3,2,5,5,3,5,3,4,6,6,5,2,8,4
-28,3,3,3,3,4,4,5,3,3,5,5,4,7,5,6,4,8,5
-29,3,6,4,2,3,7,4,4,3,7,6,6,7,3,5,4,8,5
-30,5,3,3,4,5,6,2,3,4,10,4,6,8,3,5,2,8,4
-31,4,3,3,4,5,7,3,3,6,7,3,4,8,5,6,1,5,3
-32,3,2,2,4,3,6,1,3,7,6,5,3,7,7,4,0,4,3
-33,3,6,2,3,5,6,1,4,8,6,5,3,6,6,4,3,4,4
-34,3,4,0,3,4,5,1,4,8,4,5,3,5,5,6,3,4,3
+,Manchester City,FC Chelsea,FC Everton,Newcastle United,FC Liverpool,FC Southampton,Manchester United,FC Fulham,Tottenham Hotspur,FC Arsenal,FC Burnley,Leicester City,West Ham United,Crystal Palace,AFC Bournemouth,Cardiff City,Brighton & Hove Albion,FC Watford,Wolverhampton Wanderers,Huddersfield Town
+1,3,3,5,1,2,0,4,4,4,2,3,3,3,4,0,1,1,2,2,1
+2,4,3,4,1,2,0,4,4,3,4,3,3,3,4,0,1,1,2,2,0
+3,5,2,5,1,2,0,3,3,3,4,3,2,3,4,0,1,1,3,2,0
+4,5,2,7,1,2,0,2,4,4,5,5,2,4,2,0,2,1,2,2,1
+5,6,2,7,1,3,0,3,3,5,6,5,2,4,3,0,2,2,2,2,0
+6,5,2,6,1,3,1,2,3,5,5,5,2,5,3,0,2,2,2,1,0
+7,6,2,5,1,2,1,1,1,6,4,4,3,5,3,0,3,1,3,0,0
+8,5,2,4,1,2,1,1,5,7,5,4,3,5,3,0,2,1,2,0,0
+9,5,2,2,1,3,1,2,2,5,6,4,3,5,3,0,2,2,2,0,0
+10,4,3,1,1,3,1,2,1,3,3,3,1,6,2,0,2,2,2,0,0
+11,3,2,1,1,3,1,3,1,4,4,3,2,6,2,0,2,2,2,0,0
+12,2,2,1,3,1,0,3,2,5,5,3,3,6,2,0,1,3,2,0,0
+13,4,2,1,3,1,1,1,2,6,3,2,3,6,2,1,2,1,1,1,1
+14,4,3,1,3,1,2,1,3,5,4,2,3,6,2,2,1,1,1,1,1
+15,5,2,1,1,1,2,1,1,4,4,1,3,7,2,2,1,1,1,1,1
+16,5,2,1,1,2,2,1,1,4,4,1,2,8,2,3,1,2,1,1,1
+17,5,3,1,2,4,2,3,2,6,3,1,2,7,2,3,1,2,0,0,4
+18,5,3,2,2,4,2,3,2,6,6,1,1,7,2,3,1,2,1,1,4
+19,4,3,2,2,5,2,4,1,6,6,1,1,10,2,3,2,2,1,1,4
+20,3,3,2,2,5,2,3,2,6,6,1,1,8,1,4,2,2,1,1,4
+21,2,3,2,1,5,3,2,3,5,6,1,1,8,1,3,2,2,1,1,4
+22,3,2,0,1,3,3,4,2,4,3,0,1,8,1,2,1,1,0,0,3
+23,3,2,0,1,5,3,2,2,4,3,0,1,7,3,2,0,1,0,0,3
+24,3,2,0,2,4,2,2,2,3,5,0,1,6,1,3,0,1,0,0,2
+25,3,2,0,2,3,1,1,3,3,5,0,2,7,1,4,0,1,0,0,2
+26,3,2,0,1,3,3,2,2,3,4,0,2,6,1,4,0,2,0,0,2
+27,3,1,0,0,3,3,4,3,1,3,0,2,5,2,4,0,1,0,0,1
+28,4,1,0,0,3,3,7,3,1,3,0,2,5,2,3,0,2,1,0,0
+29,3,1,0,0,2,3,7,3,1,3,0,2,5,1,3,0,2,1,0,0
+30,4,1,0,0,2,3,6,3,2,3,0,2,5,1,2,0,2,0,0,0
+31,2,1,0,0,3,3,1,3,3,4,0,2,5,0,3,0,2,0,0,0
+32,2,1,1,0,2,1,1,2,2,4,0,2,5,0,3,0,2,0,0,0
+33,3,1,1,0,2,1,1,2,5,3,0,2,4,0,3,0,1,1,0,0
+34,1,2,1,1,0,0,0,2,4,4,0,1,4,0,5,0,1,1,0,0
+35,2,2,1,1,0,0,0,4,3,4,0,1,6,0,5,0,1,1,0,0
+36,3,1,1,1,0,1,0,3,3,4,0,1,5,0,6,0,1,2,0,0
+37,3,2,1,1,2,1,0,4,3,4,0,1,3,0,6,0,1,2,0,0
+38,2,3,0,1,2,1,1,4,2,5,0,1,3,0,6,0,1,1,0,0
 </pre>
 
 
 
     <script type="module">
+
         $(function() {
             $('#container').highcharts({
+                chart: {
+                    type: 'line',
+                    width: 850,
+                    style: {  
+                        fontFamily: 'monospace',
+                        color: "#00ffff"},
+                    backgroundColor: 'black'                  
+                },
                 legend: {
-                    enabled: false
+                    verticalAlign: 'top',
+                    itemStyle: {
+                        color: '#00ffff',
+                        fontFamily: 'monospace'
+                    }     
                 },
                 title: {
-text: 'Injured players per team and matchday season 18/19'
-},
-yAxis: {  
-type: 'category',
-title: {
-text: 'Injured players'
-},
-min: 0,
-max: 10,
-scrollbar: {
-    enabled: true,
-    showFull: true
-}
-},
+                    style: {
+                    color: "white"
+                        },
+                    text: 'Injured players per team and matchday season 18/19'
+                }, 
                 
-xAxis: {
-title: {
-text: 'Matchday'
-},
-accessibility: {
-description: 'Matchday 1 to 34'
-},
-categories: [],
-    labels: {
-        steps: 1
-    }
-},
+                yAxis: {  
+                    type: 'category',
+                    title: {
+                        text: 'Injured players'
+                    },
+                        min: 0,
+                        max: 10
+                },
                 
+                xAxis: {
+                    title: {
+                        text: 'Matchday'
+                    },
+                    min: 1,
+                    max: 34,
+                    accessibility: {
+                        description: 'Matchday 1 to 34'
+                    },
+                    categories: [],
+                    labels: {
+                        steps: 1,
+                        overflow: 'justify'
+                    },
+                },
+              
                 data: {
                 csv: document.getElementById('csv').innerHTML
             },
-                
-series: [
-{}   
-]
+                series: [
+                    {
+                        color: "red"}    
+                ]
             }, function(chart) {
 
-                var $customLegend = $('#customLegend').append('<select id="customSelect" ></select>').find('select'),
-                    $option,
-                    serie;
-
-                $customLegend.append('<option>Select team(s)</option>');
+                var serie;
 
                 $.each(chart.series, function(i, serie) {
-                    
-                    $customLegend.append('<option>' + serie.name + '</option>');
+                    serie.hide()
                 });
 
-                $customLegend.change(function() {
 
-                    $option = $(this).val();
-
-                    serie = chart.get($option);
-
-                    if (serie.visible) {
-                        serie.hide();
-                    } else {
-                        serie.show();
-                    }
-                });
 
             });
         });
 
-
     </script>
+
+    <div id='footer'>
+        <div id='red'>
+            <a href="101.html">Impressum</a>
+        </div>
+        <div id='green'>
+            other stuff
+        </div>
+        <div id='yellow'>
+            stuff
+        </div>
+        <div id='blue'>
+            stuff
+        </div>
+    </div>
 </body>
 
 </html>

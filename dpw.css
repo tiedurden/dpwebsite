@@ -5,14 +5,14 @@ body {
 }
 
 #main,
-#header,
-#footer {
+#header {
     width: 850px;
     margin-left: auto;
     margin-right: auto;
 }
 
 #topnavbar {
+    margin-top: 0px;
     height: 5px;
     width: 850px;
     margin-left: auto;
@@ -26,7 +26,9 @@ body {
 }
 
 
-
+p {
+    line-height: 120%;
+}
 
 #header {
     text-align: right;
@@ -106,21 +108,62 @@ hr {
     font-size: 15px;
     column-span: 3;
     font-family: 'Press Start 2P', monospace;
-    margin: 4px 0px;
 }
 
+#footer {
+    bottom: 0;
+    width: 850px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 0;
+    text-align: center;
+
+}
+
+
+select {
+    -moz-appearance: none;
+    appearance: none;
+    background-color: black;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, .3);
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Open Sans',
+        sans-serif;
+    font-size: 16px;
+    height: 40px;
+    outline: none;
+    padding-left: 10px;
+    width: 100%;
+}
+
+select option {
+    color: #666;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+select:focus::-ms-value {
+    background-color: transparent;
+}
 
 
 #container {
     width: 850px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 30px;
 }
 
 .button {
     margin-bottom: 5 px;
     margin-top: 0px;
 }
+
 
 
 @media screen and (max-width: 850px) {
