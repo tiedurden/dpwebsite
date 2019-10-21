@@ -68,7 +68,7 @@ function countUp() {
     try {
         window.location = "https://tiedurden.github.io/dpwebsite/" + countval.value + ".html";
     } catch {
-        window.location = "https://tiedurden.github.io/dpwebsite/ + 000 + ".html";
+        window.location = "https://tiedurden.github.io/dpwebsite/" + 000 + ".html";
     }
 }
 
