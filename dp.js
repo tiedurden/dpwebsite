@@ -66,9 +66,9 @@ function countUp() {
         countval.value++;
     }
     try {
-        window.location = "/Users/hhemba109/Desktop/dpwebsite/github%20files/" + countval.value + ".html";
+        window.location = "https://tiedurden.github.io/dpwebsite/" + countval.value + ".html";
     } catch {
-        window.location = "/Users/hhemba109/Desktop/dpwebsite/github%20files/" + 000 + ".html";
+        window.location = "https://tiedurden.github.io/dpwebsite/ + 000 + ".html";
     }
 }
 
@@ -77,6 +77,6 @@ function countDown() {
     if (countval.value > 100) {
         countval.value--;
     }
-    window.location = "/Users/hhemba109/Desktop/dpwebsite/github%20files/" + countval.value + ".html";
+    window.location = "https://tiedurden.github.io/dpwebsite/" + countval.value + ".html";
 
 }
