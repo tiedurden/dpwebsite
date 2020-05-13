@@ -2,10 +2,10 @@
 
 // the credentials to connect to the database
 
-$servername = "45.87.80.52";
-$username = "u263231762_dpfau";
-$password = "test123";
-$dbname = "u263231762_Bulistats3";
+$servername = "";
+$username = "";
+$password = "";
+$dbname = "";
 
 
 // gettin the superglobal variable that have been passed to the function 
