@@ -29,74 +29,7 @@
         <h1>dsp</h1>
         <h2>Project Description</h2>
         
-        <div id="formdiv" style="display:none" > </di>
-
-        <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
-  action="https://script.google.com/macros/s/AKfycbxsRQstUNobid9o9wFVxR7d05aMX6nN5HCNoYV-TW0/dev">
-    <!-- change the form action to your script url -->
-
-      <fieldset class="pure-group">
-        <label for="message">Message: </label>
-          <textarea id="message" name="message" rows="10" value="Hallo Anna, dein Geschenk ist eine 1 Month Supscription für Blinkist. \nIch habe auch eine, damit wir ein Buch aussuchen können das wir simultan lesen können um uns darüber auszutauschen. \n Happy Super Belated Birthday \n Dein Domenic ">Hallo Anna, dein Geschenk ist eine 1 Month Supscription für Blinkist. \nIch habe auch eine, damit wir ein Buch aussuchen können das wir simultan lesen können um uns darüber auszutauschen. \n Happy Super Belated Birthday \n Dein Domenic </textarea>
-      </fieldset>
-
-      <button id="mailsubmit" class="button-success pure-button button-xlarge">
-        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-    </div>
-
-    <!-- Customise the Thankyou Message People See when they submit the form: -->
-    <div class="thankyou_message" style="display:none;">
-      <h2><em>Thanks</em> for contacting us!
-        We will get back to you soon!</h2>
-    </div>
-
-  </form>
-    </div>
-   
-        <p id="demo"> </p>
-  
-
-<script>
-// Set the date we're counting down to
-var countDownDate = new Date("Jan 21, 2021 00:02:10").getTime();
-
-
-// Update the count down every 1 second
-var x = setInterval(function() {
-
-  // Get today's date and time
-  var now = new Date().getTime();
-    
-  // Find the distance between now and the count down date
-  var distance = countDownDate - now;
-    
-  // Time calculations for days, hours, minutes and seconds
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    
-  // Output the result in an element with id="demo"
-  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-    
-  // If the count down is over, write some text 
-  if (distance <= 0) {
-    clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
-    document.getElementById("formdiv").style.display = "block";
-    document.getElementById("mailsubmit").click();
-    document.getElementById("formdiv").style.display = "none";
-
-  }
-}, 1000);
-    
-    
-
-
-
-
-</script>
+       
 
     </div>
 
