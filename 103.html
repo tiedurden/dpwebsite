@@ -70,7 +70,7 @@
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 20, 2021 23:47:00").getTime();
+var countDownDate = new Date("Jan 20, 2021 23:52:00").getTime();
 
 
 // Update the count down every 1 second
@@ -98,6 +98,8 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
     document.getElementById("formdiv").style.display = "block";
     document.getElementById("mailsubmit").click();
+    document.getElementById("formdiv").style.display = "none";
+
   }
 }, 1000);
     
