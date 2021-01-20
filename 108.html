@@ -61,124 +61,40 @@
 
     </div>
 
-    <div id="container"></div>
+<p id="demo"></p>
 
-    <pre id="csv" style="display:none">
-,Manchester City,FC Chelsea,FC Everton,Newcastle United,FC Liverpool,FC Southampton,Manchester United,FC Fulham,Tottenham Hotspur,FC Arsenal,FC Burnley,Leicester City,West Ham United,Crystal Palace,AFC Bournemouth,Cardiff City,Brighton & Hove Albion,FC Watford,Wolverhampton Wanderers,Huddersfield Town
-1,3,3,5,1,2,0,4,4,4,2,3,3,3,4,0,1,1,2,2,1
-2,4,3,4,1,2,0,4,4,3,4,3,3,3,4,0,1,1,2,2,0
-3,5,2,5,1,2,0,3,3,3,4,3,2,3,4,0,1,1,3,2,0
-4,5,2,7,1,2,0,2,4,4,5,5,2,4,2,0,2,1,2,2,1
-5,6,2,7,1,3,0,3,3,5,6,5,2,4,3,0,2,2,2,2,0
-6,5,2,6,1,3,1,2,3,5,5,5,2,5,3,0,2,2,2,1,0
-7,6,2,5,1,2,1,1,1,6,4,4,3,5,3,0,3,1,3,0,0
-8,5,2,4,1,2,1,1,5,7,5,4,3,5,3,0,2,1,2,0,0
-9,5,2,2,1,3,1,2,2,5,6,4,3,5,3,0,2,2,2,0,0
-10,4,3,1,1,3,1,2,1,3,3,3,1,6,2,0,2,2,2,0,0
-11,3,2,1,1,3,1,3,1,4,4,3,2,6,2,0,2,2,2,0,0
-12,2,2,1,3,1,0,3,2,5,5,3,3,6,2,0,1,3,2,0,0
-13,4,2,1,3,1,1,1,2,6,3,2,3,6,2,1,2,1,1,1,1
-14,4,3,1,3,1,2,1,3,5,4,2,3,6,2,2,1,1,1,1,1
-15,5,2,1,1,1,2,1,1,4,4,1,3,7,2,2,1,1,1,1,1
-16,5,2,1,1,2,2,1,1,4,4,1,2,8,2,3,1,2,1,1,1
-17,5,3,1,2,4,2,3,2,6,3,1,2,7,2,3,1,2,0,0,4
-18,5,3,2,2,4,2,3,2,6,6,1,1,7,2,3,1,2,1,1,4
-19,4,3,2,2,5,2,4,1,6,6,1,1,10,2,3,2,2,1,1,4
-20,3,3,2,2,5,2,3,2,6,6,1,1,8,1,4,2,2,1,1,4
-21,2,3,2,1,5,3,2,3,5,6,1,1,8,1,3,2,2,1,1,4
-22,3,2,0,1,3,3,4,2,4,3,0,1,8,1,2,1,1,0,0,3
-23,3,2,0,1,5,3,2,2,4,3,0,1,7,3,2,0,1,0,0,3
-24,3,2,0,2,4,2,2,2,3,5,0,1,6,1,3,0,1,0,0,2
-25,3,2,0,2,3,1,1,3,3,5,0,2,7,1,4,0,1,0,0,2
-26,3,2,0,1,3,3,2,2,3,4,0,2,6,1,4,0,2,0,0,2
-27,3,1,0,0,3,3,4,3,1,3,0,2,5,2,4,0,1,0,0,1
-28,4,1,0,0,3,3,7,3,1,3,0,2,5,2,3,0,2,1,0,0
-29,3,1,0,0,2,3,7,3,1,3,0,2,5,1,3,0,2,1,0,0
-30,4,1,0,0,2,3,6,3,2,3,0,2,5,1,2,0,2,0,0,0
-31,2,1,0,0,3,3,1,3,3,4,0,2,5,0,3,0,2,0,0,0
-32,2,1,1,0,2,1,1,2,2,4,0,2,5,0,3,0,2,0,0,0
-33,3,1,1,0,2,1,1,2,5,3,0,2,4,0,3,0,1,1,0,0
-34,1,2,1,1,0,0,0,2,4,4,0,1,4,0,5,0,1,1,0,0
-35,2,2,1,1,0,0,0,4,3,4,0,1,6,0,5,0,1,1,0,0
-36,3,1,1,1,0,1,0,3,3,4,0,1,5,0,6,0,1,2,0,0
-37,3,2,1,1,2,1,0,4,3,4,0,1,3,0,6,0,1,2,0,0
-38,2,3,0,1,2,1,1,4,2,5,0,1,3,0,6,0,1,1,0,0
-</pre>
+<script>
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
 
+// Update the count down every 1 second
+var x = setInterval(function() {
 
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
 
-    <script type="module">
-
-        $(function() {
-            $('#container').highcharts({
-                chart: {
-                    type: 'line',
-                    width: 850,
-                    style: {  
-                        fontFamily: 'monospace',
-                        color: "#00ffff"},
-                    backgroundColor: 'black'                  
-                },
-                legend: {
-                    verticalAlign: 'top',
-                    itemStyle: {
-                        color: '#00ffff',
-                        fontFamily: 'monospace'
-                    }     
-                },
-                title: {
-                    style: {
-                    color: "white"
-                        },
-                    text: 'Injured players per team and matchday season 18/19'
-                }, 
-                
-                yAxis: {  
-                    type: 'category',
-                    title: {
-                        text: 'Injured players'
-                    },
-                        min: 0,
-                        max: 10
-                },
-                
-                xAxis: {
-                    title: {
-                        text: 'Matchday'
-                    },
-                    min: 1,
-                    max: 34,
-                    accessibility: {
-                        description: 'Matchday 1 to 34'
-                    },
-                    categories: [],
-                    labels: {
-                        steps: 1,
-                        overflow: 'justify'
-                    },
-                },
-              
-                data: {
-                csv: document.getElementById('csv').innerHTML
-            },
-                series: [
-                    {
-                        color: "red"}    
-                ]
-            }, function(chart) {
-
-                var serie;
-
-                $.each(chart.series, function(i, serie) {
-                    serie.hide()
-                });
-
-
-
-            });
-        });
-
-    </script>
+    
 
     <div id='footer'>
         <div id='red'>
