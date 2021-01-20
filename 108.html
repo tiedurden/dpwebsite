@@ -75,17 +75,11 @@
 
       <fieldset class="pure-group">
         <label for="message">Message: </label>
-        <textarea id="message" name="message" rows="10" value="test" ></textarea>
-      </fieldset>
-
-      <fieldset class="pure-group">
-        <label for="email"><em>Your</em> Email Address:</label>
-        <input id="email" name="email" type="email" value="you got an"
-        required placeholder="your.name@email.com"/>
+        <textarea id="message" name="message" rows="10" value="Hallo Anna, dein Geschenk ist eine 1 Month Supscription für Blinkist. \nIch habe auch eine, damit wir ein Buch aussuchen können das wir simultan lesen können um uns darüber auszutauschen. \n Happy Super Belated Birthday \n Dein Domenic "></textarea>
       </fieldset>
 
       <fieldset class="pure-group honeypot-field">
-        <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+        <label for="honeypot"></label>
         <input id="honeypot" type="text" name="honeypot" value="" />
       </fieldset>
 
@@ -133,7 +127,7 @@ var x = setInterval(function() {
   + minutes + "m " + seconds + "s ";
     
   // If the count down is over, write some text 
-  if (distance < 0) {
+  if (distance <= 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
     
