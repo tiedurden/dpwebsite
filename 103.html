@@ -80,7 +80,7 @@
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 20, 2021 23:30:00").getTime();
+var countDownDate = new Date("Jan 20, 2021 23:40:00").getTime();
     
 var countDownDate1 = 0;
     
@@ -107,16 +107,14 @@ var x = setInterval(function() {
   + minutes + "m " + seconds + "s ";
     
   // If the count down is over, write some text 
-  if (distance < 0) {
+  if (distance <= 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
+      document.getElementById("mailsubmit").click();
   }
 }, 1000);
     
     
-if (countDownDate == 0) {
-    document.getElementById("mailsubmit").click();   
-}
 
 
 
