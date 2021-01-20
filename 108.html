@@ -63,9 +63,17 @@
 
 <h1 id="demo" style="color:aquamarin; margin-top:60px"></h1>
 
+
+    
+    </div>
+
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("Mar 1, 2021 20:15:0").getTime();
+    
+var countDownDate1 = 0;
+    
+console.log(countDownDate);
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -92,6 +100,33 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+    
+let transport = nodemailer.createTransport({
+    host: 'smtp.mailtrap.io',
+    port: 2525,
+    auth: {
+       user: '9834702a7be638',
+       pass: 'ffafce2ae1c592'
+    }
+});
+    
+const message = {
+    from: 'domenic.s.pfau@gmail.com', // Sender address
+    to: 'd-s-p@live.de',         // List of recipients
+    subject: 'Here is your Birthday present', // Subject line
+    text: 'It is a one month subscribtion to blinkist: n\Creds:\nUsername:annalovestoread@gmail.com\nPassword:acrlpblmhREAD26\n I got one for the following month, too so we can use this to choose a book we can read simultaneously!' // Plain text body
+};
+
+
+if  (countDownDate1 == 0) {  
+transport.sendMail(message, function(err, info) {
+    if (err) {
+      console.log(err)
+    } else {
+      console.log(info);
+    }
+}); 
+}
 </script>
 
     
