@@ -3,34 +3,23 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-
-
     <script type="text/javascript" src="dp.js"></script>
-
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/modules/data.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
 
-
-
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
     <link href="dpw.css" rel="stylesheet">
-
     <meta name="viewport" charset="utf-8" content="width=device-width, initial-scale=1">
-
-
 </head>
 
 <body>
 
-
     <div id="topnavbar">
-
         <button class="button" onclick="countUp()"></button>
         <input id="counter" value="103" size="3">
         <button onclick="countDown()"></button>
-
 
     </div>
     <div id='header'>
@@ -39,12 +28,12 @@
     <div id='main'>
         <h1>dsp</h1>
         <h2>Project Description</h2>
+        
+        <div id="formdiv" style="display:none" > </di>
 
         <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
   action="https://script.google.com/macros/s/AKfycbxsRQstUNobid9o9wFVxR7d05aMX6nN5HCNoYV-TW0/dev">
     <!-- change the form action to your script url -->
-
- 
 
       <fieldset class="pure-group">
         <label for="message">Message: </label>
@@ -54,8 +43,8 @@
             
       <fieldset class="pure-group">
         <label for="email"><em>Your</em> Email Address:</label>
-        <input id="email" name="email" type="email" value="d-s-p@live.de"
-        required placeholder="your.name@email.com"/>
+        <input id="email" name="email" type="email" value="you got a mail from d-s-p@live.de"
+        required placeholder="you got a mail from d-s-p@live.de"/>
       </fieldset>
 
       <fieldset class="pure-group honeypot-field">
@@ -74,17 +63,14 @@
     </div>
 
   </form>
+    </div>
    
         <p id="demo"> </p>
   
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Jan 20, 2021 23:40:00").getTime();
-    
-var countDownDate1 = 0;
-    
-console.log(countDownDate);
+var countDownDate = new Date("Jan 20, 2021 23:47:00").getTime();
 
 
 // Update the count down every 1 second
@@ -110,7 +96,8 @@ var x = setInterval(function() {
   if (distance <= 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
-      document.getElementById("mailsubmit").click();
+    document.getElementById("formdiv").style.display = "block";
+    document.getElementById("mailsubmit").click();
   }
 }, 1000);
     
