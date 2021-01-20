@@ -61,9 +61,43 @@
 
     </div>
 
-<h1 id="demo" style="color:aquamarin; margin-top:60px"></h1>
+ <form id="myForm" class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+  action="https://script.google.com/macros/s/AKfycbwMxYDrufp73bKdU8gMvxFDdHRuzcR4IKQUB33B7GqwyfyZS04/exec">
+    <!-- change the form action to your script url -->
 
+    <div class="form-elements">
+      <fieldset class="pure-group">
+        <label for="name">Name: </label>
+        <input id="name" name="name" value="Anna" placeholder="What your Mom calls you" />
+      </fieldset>
 
+      <fieldset class="pure-group">
+        <label for="message">Message: </label>
+        <textarea id="message" name="message" rows="10" value="test" ></textarea>
+      </fieldset>
+
+      <fieldset class="pure-group">
+        <label for="email"><em>Your</em> Email Address:</label>
+        <input id="email" name="email" type="email" value="d-s-p@live.de"
+        required placeholder="your.name@email.com"/>
+      </fieldset>
+
+      <fieldset class="pure-group honeypot-field">
+        <label for="honeypot">To help avoid spam, utilize a Honeypot technique with a hidden text field; must be empty to submit the form! Otherwise, we assume the user is a spam bot.</label>
+        <input id="honeypot" type="text" name="honeypot" value="" />
+      </fieldset>
+
+      <button class="button-success pure-button button-xlarge">
+        <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+    </div>
+
+    <!-- Customise the Thankyou Message People See when they submit the form: -->
+    <div class="thankyou_message" style="display:none;">
+      <h2><em>Thanks</em> for contacting us!
+        We will get back to you soon!</h2>
+    </div>
+
+  </form>
     
     </div>
 
@@ -104,30 +138,9 @@ var x = setInterval(function() {
 
 
 
-function sendamail(){  
-    let transport = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
-    port: 2525,
-    auth: {
-       user: '9834702a7be638',
-       pass: 'ffafce2ae1c592'
-    }
-});
-    
-const message = {
-    from: 'domenic.s.pfau@gmail.com', // Sender address
-    to: 'd-s-p@live.de',         // List of recipients
-    subject: 'Here is your Birthday present', // Subject line
-    text: 'It is a one month subscribtion to blinkist: n\Creds:\nUsername:annalovestoread@gmail.com\nPassword:acrlpblmhREAD26\n I got one for the following month, too so we can use this to choose a book we can read simultaneously!' // Plain text body
-};
-    
-transport.sendMail(message, function(err, info) {
-    if (err) {
-      console.log(err)
-    } else {
-      console.log(info);
-    }
-}); 
+function sendamail(){
+    document.getElementById("myForm").submit();
+
 }
 </script>
 
