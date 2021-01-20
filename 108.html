@@ -89,7 +89,7 @@
         <input id="honeypot" type="text" name="honeypot" value="" />
       </fieldset>
 
-      <button class="button-success pure-button button-xlarge">
+      <button id="mailsubmit" class="button-success pure-button button-xlarge">
         <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
     </div>
 
@@ -136,6 +136,8 @@ var x = setInterval(function() {
   if (distance < 0) {
     clearInterval(x);
     document.getElementById("demo").innerHTML = "EXPIRED";
+    
+    document.getElementById("mailsubmit").click();
   }
 }, 1000);
     
